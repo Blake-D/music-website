@@ -18,9 +18,17 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [modalContent, setModalContent] = useState('modal content')
 
+  function handleModal(){
+    if(!modalIsOpen){
+      setModalIsOpen(true)
+    } else{
+      setModalIsOpen(false)
+    }
+  }
+
   return (
     <div>
-      <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
+      {/* <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
       <Modal 
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
@@ -37,7 +45,7 @@ function App() {
         >
         <h2>{modalContent}</h2>
         <button onClick={() => setModalIsOpen(false)}>close</button>
-      </Modal>
+      </Modal> */}
       <Router>
         <Route exact path="/" render={Home} />
         <Route exact path="/about" render={About} />
@@ -45,7 +53,7 @@ function App() {
         <Route exact path="/music" render={Music} />
         <Route exact path="/music/piano" render={Piano} />
         <Route exact path="/music/Strings" render={Strings} />
-        <Route exact path="/music/vocal" render={Vocal} />
+        <Route path="/music/vocal" render={() => <Vocal modalContent={modalContent} modalIsOpen={modalIsOpen} handleModal={handleModal}/>}/>
         <Route exact path="/music/electronic" render={Electronic} />
         <Route exact path="/music/chamber-misc" render={ChamberMisc} />
       </Router>

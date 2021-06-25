@@ -1,10 +1,16 @@
 import Nav from '../nav'
+import Modal from 'react-modal'
 
-function Vocal() {
+function Vocal(props) {
     return (
         <div>
+            {/* <button onClick={() => props.handleModal(true)}>Open Modal</button> */}
+            <Modal isOpen={props.modalIsOpen} onRequestClose={() => props.handleModal(false)}>
+                <h2>{props.modalContent}</h2>
+                <button onClick={() => props.handleModal(false)}>close</button>
+            </Modal>
             <Nav />
-            <p>Victims of the Rooster</p>
+            <p onClick={() => props.handleModal(true)}>Victims of the Rooster</p>
             <audio src="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" controls controlsList="nodownload" />
             <p>They</p>
             <audio src="https://docs.google.com/uc?export=download&id=1FAfS9VVeD1HiKBuZ-bKytR9W8-YkCmzW" controls controlsList="nodownload" />
