@@ -16,6 +16,8 @@ Modal.setAppElement('#root')
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalContent, setModalContent] = useState('modal content')
+
   return (
     <div>
       <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
@@ -33,7 +35,7 @@ function App() {
           }
         }
         >
-        <h2>Modal Title</h2>
+        <h2>{modalContent}</h2>
         <button onClick={() => setModalIsOpen(false)}>close</button>
       </Modal>
       <Router>
