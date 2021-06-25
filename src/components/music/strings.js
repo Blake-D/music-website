@@ -5,7 +5,6 @@ function Strings(){
     return(
         <div>
             <Nav />
-            <h1>String music here</h1>
             <p>Triple Quartet</p>
             <audio src="https://docs.google.com/uc?export=download&id=17yX5FCmg4lEsOtdqXNdTrvxMWPjbShWS" controls controlsList="nodownload"/>
             <p>The Thrombosing</p>
@@ -22,8 +21,8 @@ function Strings(){
             <audio src="https://docs.google.com/uc?export=download&id=1SEMwMCuWdOZD3852aj4qgIoj0LcTyg13" controls controlsList="nodownload"/>
             <p>Electronic Quintet for Humans</p>
             <audio src="https://docs.google.com/uc?export=download&id=1-Pqgi4_-dnbcuTUfS0Q_PafvGcjDUsbu" controls controlsList="nodownload"/>
-            {/* <p>Diler</p>
-            <audio src="https://docs.google.com/uc?export=download&id=1yHl_QytRzsV0Rayd5b7TTjCPc1b-5iGr" controls controlsList="nodownload"/> */}
+            <p>Diler</p>
+            <audio src="https://docs.google.com/uc?export=download&id=1SvzMec0YP6aU6G60EM_FLtiizcQ9Uwuf" controls controlsList="nodownload"/>
             
         </div>
     )
