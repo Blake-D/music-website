@@ -1,9 +1,8 @@
 function Player(props){
-    console.log(props.playerUrl)
     return(
         <div>
-            <p>Victims of the Rooster</p>
-            <audio src={props.playerUrl} controls controlsList="nodownload" />
+            <p>{props.playerInfo.title}</p>
+            <audio src={props.playerInfo.url} controls controlsList="nodownload" />
         </div>
     )
 }

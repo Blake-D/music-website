@@ -17,10 +17,10 @@ import Player from './components/music/player'
 
 function App() {
 
-  const [playerUrl, setPlayerUrl] = useState("")
+  const [playerInfo, setPlayerInfo] = useState({title: "", url: ""})
 
-  const handlePlayerUrl = (e) => {
-    setPlayerUrl(e.target.id)
+  const handlePlayerInfo = (e) => {
+    setPlayerInfo({title: e.target.innerText, url: e.target.id})
   }
 
   // const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -62,10 +62,10 @@ function App() {
         <Route exact path="/music/piano" render={Piano} />
         <Route exact path="/music/Strings" render={Strings} />
         {/* <Route path="/music/vocal" render={() => <Vocal modalContent={modalContent} modalIsOpen={modalIsOpen} handleModal={handleModal}/>}/> */}
-        <Route exact path="/music/vocal" render={() => <Vocal handlePlayerUrl={handlePlayerUrl} /> } />
+        <Route exact path="/music/vocal" render={() => <Vocal handlePlayerInfo={handlePlayerInfo} /> } />
         <Route exact path="/music/electronic" render={Electronic} />
         <Route exact path="/music/chamber-misc" render={ChamberMisc} />
-        <Route exact path="/music/player" render={()=>  <Player playerUrl={playerUrl}/>}/>
+        <Route exact path="/music/player" render={()=>  <Player playerInfo={playerInfo}/>}/>
       </Router>
     </div>
   )

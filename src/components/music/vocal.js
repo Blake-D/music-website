@@ -1,6 +1,5 @@
 import Nav from '../nav'
 import { Link } from 'react-router-dom'
-import React, { useState } from 'react'
 // import Modal from 'react-modal'
 
 
@@ -17,9 +16,8 @@ function Vocal(props){
             <Nav />
             {/* <p onClick={() => props.handleModal(true)}>Victims of the Rooster</p>
             <audio src="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" controls controlsList="nodownload" /> */}
-            <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" onClick={(e) => props.handlePlayerUrl(e)}>Victims of the Rooster</Link>
-            <p>Victims of the Rooster</p>
-            <audio src="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" controls controlsList="nodownload" />
+            <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" onClick={(e) => props.handlePlayerInfo(e)}>Victims of the Rooster</Link><br></br>
+            <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=1FAfS9VVeD1HiKBuZ-bKytR9W8-YkCmzW" onClick={(e) => props.handlePlayerInfo(e)}>They</Link>
             <p>They</p>
             <audio src="https://docs.google.com/uc?export=download&id=1FAfS9VVeD1HiKBuZ-bKytR9W8-YkCmzW" controls controlsList="nodownload" />
             <p>Six Vowels</p>
