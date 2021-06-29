@@ -6,8 +6,7 @@ import React, { useState } from 'react'
 
 
 
-function Vocal(props) {
-
+function Vocal(props){
     return (
         <div>
             {/* <button onClick={() => props.handleModal(true)}>Open Modal</button> */}
@@ -18,7 +17,7 @@ function Vocal(props) {
             <Nav />
             {/* <p onClick={() => props.handleModal(true)}>Victims of the Rooster</p>
             <audio src="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" controls controlsList="nodownload" /> */}
-            <Link to="/music/player">Victims of the Rooster</Link>
+            <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" onClick={(e) => props.handlePlayerUrl(e)}>Victims of the Rooster</Link>
             <p>Victims of the Rooster</p>
             <audio src="https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL" controls controlsList="nodownload" />
             <p>They</p>
