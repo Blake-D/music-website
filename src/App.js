@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Modal from 'react-modal'
+// import Modal from 'react-modal'
 import './styles.css'
 import Home from './components/home/home'
 import About from './components/about'
@@ -11,20 +11,24 @@ import Strings from './components/music/strings'
 import Vocal from './components/music/vocal'
 import Electronic from './components/music/electronic'
 import ChamberMisc from './components/music/chamber-misc'
+import Player from './components/music/player'
 
-Modal.setAppElement('#root')
+// Modal.setAppElement('#root')
 
 function App() {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-  const [modalContent, setModalContent] = useState('modal content')
 
-  function handleModal(){
-    if(!modalIsOpen){
-      setModalIsOpen(true)
-    } else{
-      setModalIsOpen(false)
-    }
-  }
+  const [playerUrl, setPlayerUrl] = useState("https://docs.google.com/uc?export=download&id=1H0Z7yH_fMVg4hf0cLDwh8Oo5VuXUGijL")
+
+  // const [modalIsOpen, setModalIsOpen] = useState(false)
+  // const [modalContent, setModalContent] = useState('modal content')
+
+  // function handleModal(){
+  //   if(!modalIsOpen){
+  //     setModalIsOpen(true)
+  //   } else{
+  //     setModalIsOpen(false)
+  //   }
+  // }
 
   return (
     <div>
@@ -53,9 +57,11 @@ function App() {
         <Route exact path="/music" render={Music} />
         <Route exact path="/music/piano" render={Piano} />
         <Route exact path="/music/Strings" render={Strings} />
-        <Route path="/music/vocal" render={() => <Vocal modalContent={modalContent} modalIsOpen={modalIsOpen} handleModal={handleModal}/>}/>
+        {/* <Route path="/music/vocal" render={() => <Vocal modalContent={modalContent} modalIsOpen={modalIsOpen} handleModal={handleModal}/>}/> */}
+        <Route exact path="/music/vocal" render={Vocal} />
         <Route exact path="/music/electronic" render={Electronic} />
         <Route exact path="/music/chamber-misc" render={ChamberMisc} />
+        <Route exact path="/music/player" render={()=>  <Player playerUrl={playerUrl}/>}/>
       </Router>
     </div>
   )
