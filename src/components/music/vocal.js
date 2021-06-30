@@ -24,9 +24,6 @@ function Vocal(props){
             <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=11YaktPcPHyz_ClNm_WfIy7o6E3QKHRgZ" onClick={(e) => props.handlePlayerInfo(e)}>Near'r</Link><br></br>
             <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=1NKLEsBqNHU7_1vii1xhL4NRsVSwO5p2y" onClick={(e) => props.handlePlayerInfo(e)}>Mended</Link><br></br>
             <Link to="/music/player" id="https://docs.google.com/uc?export=download&id=1a7a-g6TJvoNzHkiikhyohH6yx-sRHvTY" onClick={(e) => props.handlePlayerInfo(e)}>Binaural Octet for Solo Voice</Link><br></br>
-
-            <p>Binaural Octet for Solo Voice</p>
-            <audio src="https://docs.google.com/uc?export=download&id=1a7a-g6TJvoNzHkiikhyohH6yx-sRHvTY" controls controlsList="nodownload" />
         </div>
     )
 }
