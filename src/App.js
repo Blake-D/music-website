@@ -12,10 +12,13 @@ import Vocal from './components/music/vocal'
 import Electronic from './components/music/electronic'
 import ChamberMisc from './components/music/chamber-misc'
 import Player from './components/music/player'
+import Tracks from './Tracks'
 
 // Modal.setAppElement('#root')
 
 function App() {
+  const trackData = Tracks
+  console.log(trackData)
 
   const [playerInfo, setPlayerInfo] = useState({title: "", url: ""})
 
@@ -59,7 +62,8 @@ function App() {
         <Route exact path="/about" render={About} />
         <Route exact path="/collab" render={Collab} />
         <Route exact path="/music" render={Music} />
-        <Route exact path="/music/piano" render={Piano} />
+        {/* <Route exact path="/music/piano" render={Piano} /> */}
+        <Route exact path="/music/piano" render={() => <Piano trackData={trackData} /> } />
         <Route exact path="/music/Strings" render={Strings} />
         {/* <Route path="/music/vocal" render={() => <Vocal modalContent={modalContent} modalIsOpen={modalIsOpen} handleModal={handleModal}/>}/> */}
         <Route exact path="/music/vocal" render={() => <Vocal handlePlayerInfo={handlePlayerInfo} /> } />
