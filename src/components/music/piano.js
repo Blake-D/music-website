@@ -1,10 +1,14 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import Nav from '../nav'
 
 function Piano(props){
-    console.log(props.trackData[0].trackList)
+    // console.log(props.trackData[0].trackList)
     const tracks = props.trackData[0].trackList.map(track => {
-        return <li>{track.title}</li>
+        return (
+            <li>
+                <Link to={`/music/player/${track.id}`}>{track.title}</Link>
+            </li>
+        )
     })
     return(
         <div>

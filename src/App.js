@@ -18,7 +18,7 @@ import Tracks from './Tracks'
 
 function App() {
   const trackData = Tracks
-  console.log(trackData)
+  // console.log(trackData)
 
   const [playerInfo, setPlayerInfo] = useState({title: "", url: ""})
 
@@ -69,7 +69,13 @@ function App() {
         <Route exact path="/music/vocal" render={() => <Vocal handlePlayerInfo={handlePlayerInfo} /> } />
         <Route exact path="/music/electronic" render={Electronic} />
         <Route exact path="/music/chamber-misc" render={ChamberMisc} />
-        <Route exact path="/music/player" render={()=>  <Player playerInfo={playerInfo}/>}/>
+        {/* <Route exact path="/music/player" render={()=>  <Player playerInfo={playerInfo}/>}/> */}
+        <Route exact path="/music/player/:id" render={(props)=> {
+          const track = trackData[0].trackList.find(track => track.id.toString() === props.match.params.id)
+          props = {...props, ...track}
+          return <Player {...props} />
+        }}
+        />
       </Router>
     </div>
   )

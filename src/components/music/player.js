@@ -4,8 +4,8 @@ function Player(props){
     return(
         <div>
             <Nav />
-            <p>{props.playerInfo.title}</p>
-            <audio src={props.playerInfo.url} controls controlsList="nodownload" />
+            <p>{props.title}</p>
+            <audio src={props.url} controls controlsList="nodownload" />
         </div>
     )
 }
