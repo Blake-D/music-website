@@ -2,10 +2,13 @@ import React from 'react'
 import Nav from '../nav'
 
 function Piano(props){
-    console.log(props)
+    console.log(props.trackData[0].trackList)
+    const tracks = props.trackData[0].trackList.map(track => {
+        return <li>{track.title}</li>
+    })
     return(
         <div>
-            <h1>hi!</h1>
+            <ul>{tracks}</ul>
         </div>
         // <div>
         //     <Nav />
