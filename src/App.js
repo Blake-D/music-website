@@ -10,7 +10,7 @@ import Piano from './components/music/piano'
 import Strings from './components/music/strings'
 import Vocal from './components/music/vocal'
 import Electronic from './components/music/electronic'
-import ChamberMisc from './components/music/chamber-misc'
+import Chamber from './components/music/chamber'
 import Player from './components/music/player'
 import Tracks from './Tracks'
 
@@ -76,8 +76,20 @@ function App() {
           return <Player {...props} />
         }}
         />
-        <Route exact path="/music/electronic" render={Electronic} />
-        <Route exact path="/music/chamber-misc" render={ChamberMisc} />
+        <Route exact path="/music/chamber" render={() => <Chamber trackData={trackData} /> } />
+        <Route exact path="/music/chamber/player/:id" render={(props)=> {
+          const track = trackData[3].trackList.find(track => track.id.toString() === props.match.params.id)
+          props = {...props, ...track}
+          return <Player {...props} />
+        }}
+        />
+        <Route exact path="/music/electronic" render={() => <Electronic trackData={trackData} /> } />
+        <Route exact path="/music/electronic/player/:id" render={(props)=> {
+          const track = trackData[4].trackList.find(track => track.id.toString() === props.match.params.id)
+          props = {...props, ...track}
+          return <Player {...props} />
+        }}
+        />
       </Router>
       {/* <Route path="/music/vocal" render={() => <Vocal modalContent={modalContent} modalIsOpen={modalIsOpen} handleModal={handleModal}/>}/> */}
     </div>

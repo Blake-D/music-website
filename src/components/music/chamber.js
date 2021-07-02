@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import Nav from '../nav'
 
-function Electronic(props){
-    const tracks = props.trackData[4].trackList.map(track => {
+function ChamberMisc(props){
+    const tracks = props.trackData[3].trackList.map(track => {
         return (
             <li>
-                <Link to={`/music/electronic/player/${track.id}`}>{track.title}</Link>
+                <Link to={`/music/chamber/player/${track.id}`}>{track.title}</Link>
             </li>
         )
     })
@@ -17,4 +17,4 @@ function Electronic(props){
     )
 }
 
-export default Electronic
+export default ChamberMisc
