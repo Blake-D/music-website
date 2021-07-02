@@ -69,7 +69,13 @@ function App() {
           return <Player {...props} />
         }}
         />
-        <Route exact path="/music/vocal" render={() => <Vocal  /> } />
+        <Route exact path="/music/vocal" render={() => <Vocal trackData={trackData} /> } />
+        <Route exact path="/music/vocal/player/:id" render={(props)=> {
+          const track = trackData[2].trackList.find(track => track.id.toString() === props.match.params.id)
+          props = {...props, ...track}
+          return <Player {...props} />
+        }}
+        />
         <Route exact path="/music/electronic" render={Electronic} />
         <Route exact path="/music/chamber-misc" render={ChamberMisc} />
       </Router>
